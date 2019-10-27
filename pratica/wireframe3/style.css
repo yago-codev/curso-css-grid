@@ -1,0 +1,72 @@
+.article {
+  display: grid;
+  column-gap: .5rem;
+  row-gap: .5rem;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-areas:
+    "title title title title title title"
+    "meta meta meta meta meta meta"
+    "copy1 copy1 copy1 copy1 copy1 copy1"
+    "copy2 copy2 copy2 copy2 copy2 copy2"
+    "media media media media media media"
+    "aside aside aside aside aside aside";
+  margin: 0 auto;
+  max-width: 1024px;
+}
+
+.article>* {
+  min-height: 100px;
+  padding: 1rem;
+}
+
+.article__title {
+  background-color: darkturquoise;
+  grid-area: title;
+}
+
+.article__meta {
+  background-color: lightgray;
+  grid-area: meta;
+}
+
+.article__copy1 {
+  background-color: royalblue;
+  grid-area: copy1;
+}
+
+.article__copy2 {
+  background-color: rosybrown;
+  grid-area: copy2;
+}
+
+.article__media {
+  background-color: khaki;
+  grid-area: media;
+  margin: 0;
+}
+
+.article__aside {
+  background-color: coral;
+  grid-area: aside;
+}
+
+@media(min-width: 480px) {
+  .article {
+    grid-template-areas:
+      "meta meta title title title title"
+      "copy1 copy1 copy1 copy1 copy1 copy1"
+      "copy2 copy2 copy2 copy2 copy2 copy2"
+      "media media media media media aside";
+  }
+}
+
+@media(min-width: 768px) {
+  .article {
+    grid-template-areas:
+      "meta  title  title  title  copy2  copy2"
+      "copy1 copy1 copy1 copy1 copy2 copy2"
+      "copy1 copy1 copy1 copy1 copy2 copy2"
+      "media media media media media media"
+      "aside aside .     .     .     .";
+  }
+}

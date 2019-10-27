@@ -1,0 +1,34 @@
+body {
+  margin: 0;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: [site-start] 1fr [content-start] repeat(4, 1fr) [site-end];
+  grid-auto-rows: 200px;
+  column-gap: .5rem;
+  row-gap: .5rem;
+}
+
+.wrapper * {
+  background-color: royalblue;
+  padding: 1rem;
+  font-size: 2rem;
+}
+
+.wrapper *:nth-child(even) {
+  background-color: skyblue;
+}
+
+header,
+footer {
+  grid-column: site-start / site-end;
+}
+
+main {
+  grid-column: content-start;
+}
+
+aside {
+  grid-column: site-start / content-start;
+}
